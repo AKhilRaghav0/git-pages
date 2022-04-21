@@ -1,0 +1,212 @@
+[
+    {
+        "path": "404.html",
+        "type": "file",
+        "md5": "cf3a476113615d271d8d9cdf4c12a6b1"
+    },
+    {
+        "path": "assets",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/css",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/css/editor.css",
+        "type": "file",
+        "md5": "e5909a88ba1158a79ba2dbf82d6b2d86"
+    },
+    {
+        "path": "/assets/css/main.css",
+        "type": "file",
+        "md5": "509139e7c1c012f461a2cc64d92168a7"
+    },
+    {
+        "path": "/assets/css/photoswipe.css",
+        "type": "file",
+        "md5": "357f87f4e9502a5318d89e8e76e0a344"
+    },
+    {
+        "path": "/assets/css/style.css",
+        "type": "file",
+        "md5": "f6d2066c192e85e6b34d7c87536289d4"
+    },
+    {
+        "path": "assets/dynamic",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/js",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/js/photoswipe-ui-default.min.js",
+        "type": "file",
+        "md5": "d067f0883540b1ddda0e2c9ad1b14260"
+    },
+    {
+        "path": "/assets/js/photoswipe.min.js",
+        "type": "file",
+        "md5": "017385b552f7e0d979e2e2fe6f324015"
+    },
+    {
+        "path": "/assets/js/scripts.js",
+        "type": "file",
+        "md5": "400c064486cb3577ffe1cc88c62515b4"
+    },
+    {
+        "path": "/assets/js/scripts.min.js",
+        "type": "file",
+        "md5": "6ca8b60e6534a3888de1205e82df8528"
+    },
+    {
+        "path": "/assets/js/svg-fix.js",
+        "type": "file",
+        "md5": "7c0d2bb7276904b382e80bf2d85e8a96"
+    },
+    {
+        "path": "/assets/js/svg-map.js",
+        "type": "file",
+        "md5": "c02a714aae85e9bb30879a798f458527"
+    },
+    {
+        "path": "assets/svg",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/svg/gallery-icons-dark.svg",
+        "type": "file",
+        "md5": "452594838e74a3df91ad4a20cf53c831"
+    },
+    {
+        "path": "/assets/svg/gallery-icons-light.svg",
+        "type": "file",
+        "md5": "ca77079e0fe8270a7447d7f1f5d543b0"
+    },
+    {
+        "path": "/assets/svg/svg-map.svg",
+        "type": "file",
+        "md5": "8bf40ff77cd909f3f10b282e353eb5f6"
+    },
+    {
+        "path": "authors",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "authors/akhil-raghav",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/akhil-raghav/index.html",
+        "type": "file",
+        "md5": "9d5aa4493393574aba61d85c13ae1059"
+    },
+    {
+        "path": "chroot-linuxdevuan-on-android-for-arm64-devices.html",
+        "type": "file",
+        "md5": "eb5ea783d56204b7e42106bf2190c97f"
+    },
+    {
+        "path": "feed.json",
+        "type": "file",
+        "md5": "8577f01d1c1ff204cb0227df643fbfb7"
+    },
+    {
+        "path": "feed.xml",
+        "type": "file",
+        "md5": "d4024f7873283241d8ed4c625e660875"
+    },
+    {
+        "path": "index.html",
+        "type": "file",
+        "md5": "0ac7c97a6c875151178760e566602d0a"
+    },
+    {
+        "path": "media",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/1",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/Screenshot-from-2022-04-20-09-47-24.png",
+        "type": "file",
+        "md5": "55a2a75ffb44e780b61402347db805d7"
+    },
+    {
+        "path": "media/posts/1/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-2xl.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-lg.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-md.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-sm.png",
+        "type": "file",
+        "md5": "7a3bcd60c213a02e6ff7a355b07aa355"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xl.png",
+        "type": "file",
+        "md5": "8570a56208cf209cff091422ace7c039"
+    },
+    {
+        "path": "/media/posts/1/responsive/Screenshot-from-2022-04-20-09-47-24-xs.png",
+        "type": "file",
+        "md5": "81304fb3106e6ebe3f0cbdd458f62798"
+    },
+    {
+        "path": "robots.txt",
+        "type": "file",
+        "md5": "0c645395eac98861332030ed41844ce5"
+    },
+    {
+        "path": "sitemap.xml",
+        "type": "file",
+        "md5": "47e2afeb417637d94a39c74ebcd43a3e"
+    },
+    {
+        "path": "sitemap.xsl",
+        "type": "file",
+        "md5": "51a7bcec43fa1ef0366100d5c2edbe75"
+    },
+    {
+        "path": "tags",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/index.html",
+        "type": "file",
+        "md5": "907d8ac650a55c8c27d8cf8b9f568606"
+    }
+]
