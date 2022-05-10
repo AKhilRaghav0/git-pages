@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Akhil Raghav</title><meta name="generator" content="Publii Open-Source CMS for Static Site"><script type="gdpr-blocker/analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+					})(window,document,'script','dataLayer','G-GVKXY21KQR');</script><link rel="canonical" href="./"><link rel="stylesheet" href="./assets/css/style.css?v=f6d2066c192e85e6b34d7c87536289d4"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Akhil Raghav","url":"./index.html"}</script></head><body><div class="site-container"><header class="top" id="js-header"><a class="logo" href="./index.html">Akhil Raghav</a><nav class="navbar js-navbar"><button class="navbar__toggle js-toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"></ul></nav></header><main><div class="hero"><header class="hero__content"><div class="wrapper"><p>Hey,  I Akhil Raghav</p><div class="post__meta post__meta--author"><a href="./authors/akhil-raghav/index.html" class="feed__author">Akhil Raghav</a></div></div></header></div><div class="feed"><article class="feed__item"><header class="wrapper"><div class="feed__meta"><a href="./authors/akhil-raghav/index.html" class="feed__author">Akhil Raghav</a> <time datetime="2022-04-26T08:45" class="feed__date">April 26, 2022</time></div><h2><a href="./tmux-shortcuts-and-cheatsheet-2/index.html">Tmux shortcuts &amp; Cheatsheet</a></h2></header><div class="wrapper"><p># Tmux shortcuts &amp; cheatsheet start new: tmux start new with session name: tmux new -s myname attach: tmux a # (or at, or attach) attach to named: tmux a -t myname list sessions: tmux ls kill session: tmux kill-session -t myname Kill all the&hellip;</p><a href="./tmux-shortcuts-and-cheatsheet-2/index.html" class="readmore feed__readmore">Continue reading...</a></div></article><article class="feed__item"><header class="wrapper"><div class="feed__meta"><a href="./authors/akhil-raghav/index.html" class="feed__author">Akhil Raghav</a> <time datetime="2022-04-25T07:56" class="feed__date">April 25, 2022</time></div><h2><a href="./ssh/index.html">SSH Essentials </a></h2></header><div class="wrapper"><h1>About </h1><p>SSH tunneling and port forwarding snippets and utils</p><h2>Table of Contents </h2><ul><li>SOCK5 tunnel everything: </li><li>Local port forwardiing:</li><li>Remote port forewarding</li></ul><h2>SSH local-port-forwarding</h2><p>SSH local-port-forwarding. You want to be able to access a service or website that your firewall is preventing you from accessing but you know it is available from the remote server.</p><h3>Commands</h3><ul style="list-style-type: square;"><li>Definition  </li></ul><pre data-sourcepos="6:1-9:3"><code>ssh -fNL LOCAL-IP:LOCAL-PORT:REMOTE-IP:REMOTE-PORT username@remote-host
+ssh -fNL LOCAL-IP:LOCAL-PORT:REMOTE-URL:REMOTE-PORT <a href="mailto:username@remote-host">username@remote-host</a></code></pre><ul style="list-style-type: square;"><li>Examples<pre><span class="pl-c"># Example 1</span>
+<span class="pl-c"># If you want to access a service that is running on the remote server port 8888,</span>
+<span class="pl-c"># but there is a firewall that is preventing you from accessing the port 8888 from the browser.</span>
+<span class="pl-c"># For example you would like to do this from the browser but cannot, remote-host:8888</span>
+<span class="pl-c"># After running the following command you can access the service from your local browser, localhost:8080</span>
+$ ssh -NL 0.0.0.0:8080:localhost:8888 username@remote-host
+
+
+<span class="pl-c"># Example 2</span>
+<span class="pl-c"># If you are not able to access google.com from your local system but the remote server is able to access it.</span>
+<span class="pl-c"># After running the following command you can access the google.com from your local browser, localhost:8080</span>
+$ ssh -NL 0.0.0.0:8080:google.com:80 <a href="mailto:username@remote-host">username@remote-host</a></pre><p> </p></li><li>Option Combination <ul style="list-style-type: square;"><li><code>-L</code>: Local Port forward and open a remote shell.</li><li><code>-NL</code>: Local Port forward but do not open a remote shell</li><li><code>-fNL</code>: Local Port forward, do not open remote shell, and send this into the background.</li></ul></li></ul><hr><h2>SSH Remote port forwarding</h2><p>One use case for using remote port-forwarding is if a local machine is stuck behind a vpn or firewall and it needs to be accessed by a remote machine. Simple ssh will suffice but we use autossh to keep the connection reliably open for a long period of time.</p><h3>Commands</h3><p><span style="color: #34495e;"><em><strong>Allow SSH into first machine (local) from second (remote) and (third part) machine </strong></em></span></p><p>Open up ssh port on the first machine, such that it can be accessed by the second machine. We will use the first, second and third to mean the same machine in all examples.</p><ul><li style="list-style-type: none;"><ul><li>The following command should be run on the first machine </li><li>Autossh requires two additional echo ports on the second machine. Autossh uses these two ports to check if the connection is alive or not. So in all, the second machine must open three ports in the firewall for autossh to work. For this example we use the following ports:<ul><li>ACCESS_PORT = 8080</li><li>ECHO_PORT_1 = 20000</li><li>ECHO_PORT_2 = ECHO_PORT_1 + 1 (20001) (This is done automatically by autossh if not manually set).</li></ul></li><li>The command that needs to be run on the first machine is of the following form:<pre><span class="pl-c"># Usage</span>
+$ autossh -M ECHO_PORT_1 -fNR IP-ON-SECOND:ACCESS_PORT:IP-ON-FIRST:SSH-PORT second-user@second-host
+
+<span class="pl-c"># Example</span>
+$ autossh -M 20000 -fNR 0.0.0.0:8080:localhost:22 <a href="mailto:second-user@second-host">second-user@second-host</a></pre></li><li>The command that needs to be run on the second machine to acces the first machine via ssh is of the following form:<pre><span class="pl-c"># Usage</span>
+$ ssh first-user@second-host -p ACCESS_PORT
+
+<span class="pl-c"># Example</span>
+$ ssh first-user@locahost -p 8080
+<span class="pl-c">### OR </span>
+$ ssh first-user@0.0.0.0 -p 8080</pre><p> </p></li><li>The command that needs to be run by a third machine trying to gain access to the first machine via the second machine is of the following form:<pre><span class="pl-c"># Usage</span>
+$ ssh first-user@second-host -p ACCESS_PORT
+
+<span class="pl-c"># Example</span>
+$ ssh first-user@second-host -p 8080</pre></li></ul></li></ul><a href="./ssh/index.html" class="readmore feed__readmore">Continue reading...</a></div></article><article class="feed__item"><header class="wrapper"><div class="feed__meta"><a href="./authors/akhil-raghav/index.html" class="feed__author">Akhil Raghav</a> <time datetime="2022-04-21T08:39" class="feed__date">April 21, 2022</time></div><h2><a href="./chroot-linuxdevuan-on-android-for-arm64-devices/index.html">Chroot Linux(devuan) on Android (for ARM64 devices)</a></h2></header><div class="wrapper"><p>Tested on: YU Yureka Black (with android 11 custom rom and GSI )Requirements. Rooted Android device. Busybox installed. I recommend “Busybox“ app by Stephen (Stericson). A terminal for Android. For example “Termux“ app or “Terminal Emulator for Android” app or Default local terminal by lineage.</p><a href="./chroot-linuxdevuan-on-android-for-arm64-devices/index.html" class="readmore feed__readmore">Continue reading...</a></div></article></div></main><footer class="footer"><div class="footer__copyright"><p>AKhil Raghav</p></div><button onclick="backToTopFunction()" id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg><use xlink:href="./assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = {    
+        mobileMenuMode: 'sidebar',
+        animationSpeed: 300,
+        submenuWidth: 'auto',
+        doubleClickTime: 500,
+        mobileMenuExpandableSubmenus: true, 
+        relatedContainerForOverlayMenuSelector: '.top',
+   };</script><script defer="defer" src="./assets/js/scripts.min.js?v=6ca8b60e6534a3888de1205e82df8528"></script><script>var images = document.querySelectorAll('img[loading]');
+
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script></body></html>
