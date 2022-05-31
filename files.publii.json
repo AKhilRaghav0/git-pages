@@ -120,6 +120,16 @@
         "md5": "cf0a04bf45e869941270a676e37e3eb3"
     },
     {
+        "path": "discord-form",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/discord-form/index.html",
+        "type": "file",
+        "md5": "64f27400660e209a1eacda63feab6c56"
+    },
+    {
         "path": "discord-irc-bot-request",
         "type": "directory",
         "md5": false
@@ -127,7 +137,7 @@
     {
         "path": "/discord-irc-bot-request/index.html",
         "type": "file",
-        "md5": "02e03f6b25eabe98c8afb11a6e67c7b9"
+        "md5": "7154eeb9419ea3055448f879de87d081"
     },
     {
         "path": "index.html",
